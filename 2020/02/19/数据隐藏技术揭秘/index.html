@@ -1,0 +1,1048 @@
+<!DOCTYPE HTML>
+<html lang="zh_CN">
+
+
+<head>
+    <meta charset="utf-8">
+    <meta name="keywords" content="数据隐藏技术揭秘, 景礼">
+    <meta name="description" content="第1章  密写术的发展史密码学基础知识密钥
+含义：只有发送者和接收者知道
+
+密文
+含义：秘密消息。
+
+密码分析
+含义：秘密消息的破译过程。
+
+
+替换密码
+含义：一种使用特定方法或算法将明文替换为密文的一种加密算法。
+
+
+
+凯撒密码  Lin">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="renderer" content="webkit|ie-stand|ie-comp">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <title>数据隐藏技术揭秘 | 景礼</title>
+    <link rel="icon" type="image/png" href="/favicon.png">
+
+    <link rel="stylesheet" type="text/css" href="/libs/awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/materialize/css/materialize.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/aos/aos.css">
+    <link rel="stylesheet" type="text/css" href="/libs/animate/animate.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/lightGallery/css/lightgallery.min.css">
+    <link rel="stylesheet" type="text/css" href="/css/matery.css">
+    <link rel="stylesheet" type="text/css" href="/css/my.css">
+    <style type="text/css">
+        
+    </style>
+
+    <script src="/libs/jquery/jquery-2.2.0.min.js"></script>
+<meta name="generator" content="Hexo 4.2.0"></head>
+
+
+<body>
+
+<header class="navbar-fixed">
+    <nav id="headNav" class="bg-color nav-transparent">
+        <div id="navContainer" class="container">
+            <div class="nav-wrapper">
+                <div class="brand-logo">
+                    <a href="/" class="waves-effect waves-light">
+                        
+                        <img src="/medias/logo.png" class="logo-img hide-on-small-only">
+                        
+                        <span class="logo-span">景礼</span>
+                    </a>
+                </div>
+                
+
+<a href="#" data-activates="mobile-nav" class="button-collapse"><i class="fa fa-navicon"></i></a>
+<ul class="right">
+    
+    <li class="hide-on-med-and-down">
+        <a href="/" class="waves-effect waves-light">
+            
+            <i class="fa fa-home"></i>
+            
+            <span>Index</span>
+        </a>
+    </li>
+    
+    <li class="hide-on-med-and-down">
+        <a href="/tags" class="waves-effect waves-light">
+            
+            <i class="fa fa-tags"></i>
+            
+            <span>Tags</span>
+        </a>
+    </li>
+    
+    <li class="hide-on-med-and-down">
+        <a href="/categories" class="waves-effect waves-light">
+            
+            <i class="fa fa-bookmark"></i>
+            
+            <span>Categories</span>
+        </a>
+    </li>
+    
+    <li class="hide-on-med-and-down">
+        <a href="/archives" class="waves-effect waves-light">
+            
+            <i class="fa fa-archive"></i>
+            
+            <span>Archives</span>
+        </a>
+    </li>
+    
+    <li class="hide-on-med-and-down">
+        <a href="/about" class="waves-effect waves-light">
+            
+            <i class="fa fa-user-circle-o"></i>
+            
+            <span>About</span>
+        </a>
+    </li>
+    
+    <li class="hide-on-med-and-down">
+        <a href="/friends" class="waves-effect waves-light">
+            
+            <i class="fa fa-address-book"></i>
+            
+            <span>Friends</span>
+        </a>
+    </li>
+    
+    <li>
+        <a id="toggleSearch" class="waves-effect waves-light">
+            <i id="searchIcon" class="mdi-action-search" title="Search"></i>
+        </a>
+    </li>
+
+</ul>
+
+<div class="side-nav" id="mobile-nav">
+
+    <div class="mobile-head bg-color">
+        
+        <img src="/medias/logo.png" class="logo-img circle responsive-img">
+        
+        <div class="logo-name">景礼</div>
+        <div class="logo-desc">
+            
+            不相信自己的人，连努力的价值都没有
+            
+        </div>
+    </div>
+
+    
+
+    <ul class="menu-list mobile-menu-list">
+        
+        <li>
+            <a href="/" class="waves-effect waves-light">
+                
+                <i class="fa fa-fw fa-home"></i>
+                
+                Index
+            </a>
+        </li>
+        
+        <li>
+            <a href="/tags" class="waves-effect waves-light">
+                
+                <i class="fa fa-fw fa-tags"></i>
+                
+                Tags
+            </a>
+        </li>
+        
+        <li>
+            <a href="/categories" class="waves-effect waves-light">
+                
+                <i class="fa fa-fw fa-bookmark"></i>
+                
+                Categories
+            </a>
+        </li>
+        
+        <li>
+            <a href="/archives" class="waves-effect waves-light">
+                
+                <i class="fa fa-fw fa-archive"></i>
+                
+                Archives
+            </a>
+        </li>
+        
+        <li>
+            <a href="/about" class="waves-effect waves-light">
+                
+                <i class="fa fa-fw fa-user-circle-o"></i>
+                
+                About
+            </a>
+        </li>
+        
+        <li>
+            <a href="/friends" class="waves-effect waves-light">
+                
+                <i class="fa fa-fw fa-address-book"></i>
+                
+                Friends
+            </a>
+        </li>
+        
+        
+        <li><div class="divider"></div></li>
+        <li>
+            <a href="https://github.com/blinkfox/hexo-theme-matery" class="waves-effect waves-light" target="_blank">
+                <i class="fa fa-github-square fa-fw"></i>Fork Me
+            </a>
+        </li>
+        
+    </ul>
+
+    <div class="social-link">
+
+
+    <a href="mailto:xxx@xx.xx" class="tooltipped" target="_blank" data-tooltip="邮件联系我" data-position="top" data-delay="50">
+        <i class="fa fa-envelope-open"></i>
+    </a>
+
+
+
+    <a href="tencent://AddContact/?fromId=50&fromSubId=1&subcmd=all&uin=123123123" class="tooltipped" data-tooltip="QQ联系我: 123123123" data-position="top" data-delay="50">
+        <i class="fa fa-qq"></i>
+    </a>
+
+
+</div>
+</div>
+
+            </div>
+        </div>
+
+        
+        <style>
+    .nav-transparent .github-corner {
+        display: none !important;
+    }
+
+    .github-corner {
+        position: absolute;
+        z-index: 10;
+        top: 0;
+        right: 0;
+        border: 0;
+        transform: scale(1.1);
+    }
+
+    .github-corner svg {
+        color: #0f9d58;
+        fill: #fff;
+        height: 64px;
+        width: 64px;
+    }
+
+    .github-corner:hover .octo-arm {
+        animation: a 0.56s ease-in-out;
+    }
+
+    .github-corner .octo-arm {
+        animation: none;
+    }
+
+    @keyframes a {
+        0%,
+        to {
+            transform: rotate(0);
+        }
+        20%,
+        60% {
+            transform: rotate(-25deg);
+        }
+        40%,
+        80% {
+            transform: rotate(10deg);
+        }
+    }
+</style>
+
+<a href="https://github.com/blinkfox/hexo-theme-matery" class="github-corner tooltipped hide-on-med-and-down" target="_blank"
+   data-tooltip="Fork Me" data-position="left" data-delay="50">
+    <svg viewBox="0 0 250 250" aria-hidden="true">
+        <path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path>
+        <path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2"
+              fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path>
+        <path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z"
+              fill="currentColor" class="octo-body"></path>
+    </svg>
+</a>
+        
+    </nav>
+</header>
+
+
+
+
+
+<div class="bg-cover post-cover" style="background-image: url('/medias/featureimages/1.jpg')">
+    <div class="container">
+        <div class="row">
+            <div class="col s12 m12 l12">
+                <div class="brand">
+                    <div class="description center-align post-title">
+                        数据隐藏技术揭秘
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<main class="post-container content">
+
+    
+    <link rel="stylesheet" href="/libs/tocbot/tocbot.css">
+<style>
+    #articleContent h1::before,
+    #articleContent h2::before,
+    #articleContent h3::before,
+    #articleContent h4::before,
+    #articleContent h5::before,
+    #articleContent h6::before {
+        display: block;
+        content: " ";
+        height: 100px;
+        margin-top: -100px;
+        visibility: hidden;
+    }
+
+    #articleContent :focus {
+        outline: none;
+    }
+
+    .toc-fixed {
+        position: fixed;
+        top: 64px;
+    }
+
+    .toc-widget {
+        padding-left: 20px;
+    }
+
+    .toc-widget .toc-title {
+        margin: 35px 0 15px 0;
+        padding-left: 17px;
+        font-size: 1.5rem;
+        font-weight: bold;
+        line-height: 1.5rem;
+    }
+
+    .toc-widget ol {
+        padding: 0;
+        list-style: none;
+    }
+
+    #toc-content ol {
+        padding-left: 10px;
+    }
+
+    #toc-content ol li {
+        padding-left: 10px;
+    }
+
+    #toc-content .toc-link:hover {
+        color: #42b983;
+        font-weight: 700;
+        text-decoration: underline;
+    }
+
+    #toc-content .toc-link::before {
+        background-color: transparent;
+        max-height: 25px;
+    }
+
+    #toc-content .is-active-link {
+        color: #42b983;
+    }
+
+    #toc-content .is-active-link::before {
+        background-color: #42b983;
+    }
+</style>
+<div class="row">
+    <div class="col s12 m12 l9">
+        <!-- 文章内容详情 -->
+<div id="artDetail">
+    <div class="card">
+        <div class="card-content article-info">
+            <div class="row tag-cate">
+                <div class="col s7">
+                    
+                    <div class="article-tag">
+                        
+                            <a href="/tags/%E7%BD%91%E7%BB%9C%E5%AE%89%E5%85%A8/" target="_blank">
+                                <span class="chip bg-color">网络安全</span>
+                            </a>
+                        
+                            <a href="/tags/%E9%9A%90%E5%86%99%E6%9C%AF/" target="_blank">
+                                <span class="chip bg-color">隐写术</span>
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+                <div class="col s5 right-align">
+                    
+                    <div class="post-cate">
+                        <i class="fa fa-bookmark fa-fw icon-category"></i>
+                        
+                            <a href="/categories/%E9%9A%90%E5%86%99%E6%9C%AF/" class="post-category" target="_blank">
+                                隐写术
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+            </div>
+
+            <div class="post-info">
+                <div class="post-date info-break-policy">
+                    <i class="fa fa-calendar-minus-o fa-fw"></i>Publish Date:&nbsp;&nbsp;
+                    2020-02-19
+                </div>
+
+                
+                    
+                    <div class="info-break-policy">
+                        <i class="fa fa-file-word-o fa-fw"></i>Word Count:&nbsp;&nbsp;
+                        1.7k
+                    </div>
+                    
+
+                    
+                    <div class="info-break-policy">
+                        <i class="fa fa-clock-o fa-fw"></i>Read Times:&nbsp;&nbsp;
+                        5 Min
+                    </div>
+                    
+                
+				
+				
+                    <div id="busuanzi_container_page_pv" class="info-break-policy">
+                        <i class="fa fa-eye fa-fw"></i>Read Count:&nbsp;&nbsp;
+                        <span id="busuanzi_value_page_pv"></span>
+                    </div>
+				
+            </div>
+        </div>
+        <hr class="clearfix">
+        <div class="card-content article-card-content">
+            <div id="articleContent">
+                <h1 id="第1章-密写术的发展史"><a href="#第1章-密写术的发展史" class="headerlink" title="第1章  密写术的发展史"></a>第1章  密写术的发展史</h1><h2 id="密码学"><a href="#密码学" class="headerlink" title="密码学"></a>密码学</h2><h3 id="基础知识"><a href="#基础知识" class="headerlink" title="基础知识"></a>基础知识</h3><h4 id="密钥"><a href="#密钥" class="headerlink" title="密钥"></a>密钥</h4><blockquote>
+<p>含义：只有发送者和接收者知道</p>
+</blockquote>
+<h4 id="密文"><a href="#密文" class="headerlink" title="密文"></a>密文</h4><blockquote>
+<p>含义：秘密消息。</p>
+</blockquote>
+<h4 id="密码分析"><a href="#密码分析" class="headerlink" title="密码分析"></a>密码分析</h4><blockquote>
+<p>含义：秘密消息的破译过程。</p>
+</blockquote>
+<p><img src="%E6%95%B0%E6%8D%AE%E9%9A%90%E8%97%8F%E6%8A%80%E6%9C%AF%E6%8F%AD%E7%A7%98/1.png" alt=""></p>
+<h3 id="替换密码"><a href="#替换密码" class="headerlink" title="替换密码"></a>替换密码</h3><blockquote>
+<p>含义：一种使用特定方法或算法将明文替换为密文的一种加密算法。</p>
+</blockquote>
+<blockquote>
+<ul>
+<li>凯撒密码  <a href="https://baike.baidu.com/item/%E6%81%BA%E6%92%92%E5%AF%86%E7%A0%81/4905284?fromtitle=%E5%87%AF%E6%92%92%E5%AF%86%E7%A0%81&fromid=1336345&fr=aladdin" target="_blank" rel="noopener">Link</a></li>
+<li>加密无线电信息与摩斯电码  <a href="https://baike.baidu.com/item/%E6%91%A9%E5%B0%94%E6%96%AF%E7%94%B5%E7%A0%81/1527853?fr=aladdin" target="_blank" rel="noopener">Link</a></li>
+<li>维吉尼亚密码  <a href="https://baike.baidu.com/item/%E7%BB%B4%E5%90%89%E5%B0%BC%E4%BA%9A%E5%AF%86%E7%A0%81/4905472?fr=aladdin" target="_blank" rel="noopener">Link</a></li>
+</ul>
+</blockquote>
+<h3 id="位移密码"><a href="#位移密码" class="headerlink" title="位移密码"></a>位移密码</h3><blockquote>
+<p>含义：将明文消息中的字母重新排列，维持原为字母的本来面貌，只是调整了位置。</p>
+</blockquote>
+<blockquote>
+<ul>
+<li>斯巴达密码棒 <a href="https://baike.baidu.com/item/%E5%AF%86%E7%A0%81%E6%A3%92/7661328?fr=aladdin" target="_blank" rel="noopener">Link</a></li>
+</ul>
+</blockquote>
+<h3 id="二者区别："><a href="#二者区别：" class="headerlink" title="二者区别："></a>二者区别：</h3><blockquote>
+<p>位移加密改变了明文中字母的位置，但是字母本身的面貌没有发生改变。</p>
+<p>替换加密改变了明文中字母的面貌，但是明文原来的顺序没有发生变化。</p>
+</blockquote>
+<h2 id="隐写术"><a href="#隐写术" class="headerlink" title="隐写术"></a>隐写术</h2><blockquote>
+<p>隐写术(Steganography)：隐藏书写的信息技术，属于信息隐藏技术当中的一种，旨在保护秘密信息的安全传输。</p>
+</blockquote>
+<h3 id="隐写分类概述"><a href="#隐写分类概述" class="headerlink" title="隐写分类概述"></a>隐写分类概述</h3><p><img src="%E6%95%B0%E6%8D%AE%E9%9A%90%E8%97%8F%E6%8A%80%E6%9C%AF%E6%8F%AD%E7%A7%98/%E5%88%86%E7%B1%BB%E6%A6%82%E8%BF%B0.png" alt=""></p>
+<h3 id="信息隐藏技术"><a href="#信息隐藏技术" class="headerlink" title="信息隐藏技术"></a>信息隐藏技术</h3><blockquote>
+<ul>
+<li>隐写术    ——主要用于通信</li>
+<li>数字水印——主要用于产权保护</li>
+<li>隐蔽信道</li>
+<li>阀下信道</li>
+<li>匿名通信</li>
+<li>……</li>
+</ul>
+</blockquote>
+<h3 id="隐写术与密码学"><a href="#隐写术与密码学" class="headerlink" title="隐写术与密码学"></a>隐写术与密码学</h3><blockquote>
+<p>辨别：消息是杂乱还是不可见的，杂乱则是密码学，否则则是隐写术。</p>
+</blockquote>
+<blockquote>
+<p>密码学：试图通过对信息加密的方法，使信息变得没有意义，让他人无法获取真正的信息。</p>
+</blockquote>
+<blockquote>
+<p>隐写术：试图隐藏通信事件本身。</p>
+</blockquote>
+<blockquote>
+<p>目的相同：针对第三方</p>
+</blockquote>
+<blockquote>
+<p>隐蔽性：（总体上）隐写&gt;加密</p>
+</blockquote>
+<blockquote>
+<p>安全性：（总体上）加密&gt;隐写</p>
+</blockquote>
+<h3 id="举例"><a href="#举例" class="headerlink" title="举例"></a>举例</h3><blockquote>
+<ul>
+<li>卡尔达诺栅格码：Spam Mimic使用了栅格密码。</li>
+<li>隐形墨水</li>
+<li>缩影术</li>
+<li>打印机跟踪点</li>
+<li>水印</li>
+</ul>
+</blockquote>
+<h4 id="典型隐写模型"><a href="#典型隐写模型" class="headerlink" title="典型隐写模型"></a>典型隐写模型</h4><p><img src="%E6%95%B0%E6%8D%AE%E9%9A%90%E8%97%8F%E6%8A%80%E6%9C%AF%E6%8F%AD%E7%A7%98/2.png" alt=""></p>
+<h2 id="小结"><a href="#小结" class="headerlink" title="小结"></a>小结</h2><blockquote>
+<p>私密通信贯穿了包括文明和战争的整个人类历史，很多著名的加密和隐写方法被重用与现在的数字形式。</p>
+<p><img src="%E6%95%B0%E6%8D%AE%E9%9A%90%E8%97%8F%E6%8A%80%E6%9C%AF%E6%8F%AD%E7%A7%98/%E7%8E%B0%E7%8A%B6.png" alt=""></p>
+</blockquote>
+<hr>
+<hr>
+<h1 id="第2章-数据隐藏简单练习四则"><a href="#第2章-数据隐藏简单练习四则" class="headerlink" title="第2章  数据隐藏简单练习四则"></a>第2章  数据隐藏简单练习四则</h1><h2 id="在word中隐藏数据"><a href="#在word中隐藏数据" class="headerlink" title="在word中隐藏数据"></a>在word中隐藏数据</h2><h3 id="操作方法"><a href="#操作方法" class="headerlink" title="操作方法"></a>操作方法</h3><h4 id="元数据"><a href="#元数据" class="headerlink" title="元数据"></a>元数据</h4><blockquote>
+<p>定义：通常把作者的名称、公司名称、关键字、标签或其他数据成为元数据。<a href="[https://baike.baidu.com/item/%E5%85%83%E6%95%B0%E6%8D%AE](https://baike.baidu.com/item/元数据)">链接</a></p>
+</blockquote>
+<h4 id="隐藏"><a href="#隐藏" class="headerlink" title="隐藏"></a>隐藏</h4><blockquote>
+<p>首先，打开word文档，输入要隐藏的数据；</p>
+<p><img src="%E6%95%B0%E6%8D%AE%E9%9A%90%E8%97%8F%E6%8A%80%E6%9C%AF%E6%8F%AD%E7%A7%98/1-1582893895064.png" alt=""></p>
+</blockquote>
+<blockquote>
+<p>然后，选中想要隐藏的内容，右键单击，选择Font（字体），勾选“Hidden”（隐藏）复选框，保存；</p>
+<p><img src="%E6%95%B0%E6%8D%AE%E9%9A%90%E8%97%8F%E6%8A%80%E6%9C%AF%E6%8F%AD%E7%A7%98/2-1582893895065.png" alt=""></p>
+</blockquote>
+<blockquote>
+<p>最后，想要隐藏的数据被隐藏；</p>
+<p><img src="%E6%95%B0%E6%8D%AE%E9%9A%90%E8%97%8F%E6%8A%80%E6%9C%AF%E6%8F%AD%E7%A7%98/3.png" alt=""></p>
+</blockquote>
+<h4 id="查看"><a href="#查看" class="headerlink" title="查看"></a>查看</h4><h5 id="方法1"><a href="#方法1" class="headerlink" title="方法1"></a>方法1</h5><blockquote>
+<p>首先，单击“File—&gt;Option”；（文件—&gt;选项）</p>
+<p>然后，选择“Display”，选中“Hidden  Text”复选框；（或者选择“Print  Hidden  Text” 也可打印出隐藏文字。）</p>
+<p>最后，文中就可以显示被隐藏内容的隐藏格式标记。</p>
+<p><img src="%E6%95%B0%E6%8D%AE%E9%9A%90%E8%97%8F%E6%8A%80%E6%9C%AF%E6%8F%AD%E7%A7%98/4.png" alt=""></p>
+<p><img src="%E6%95%B0%E6%8D%AE%E9%9A%90%E8%97%8F%E6%8A%80%E6%9C%AF%E6%8F%AD%E7%A7%98/5.png" alt=""></p>
+</blockquote>
+<h5 id="方法2"><a href="#方法2" class="headerlink" title="方法2"></a>方法2</h5><blockquote>
+<p>使用”Inspect  Document”选项。</p>
+<p>路径 ：“File—&gt;Info—&gt;Check For Issues —&gt; Inspect Document”。</p>
+<p>​             文件    信息           检查问题                   检查文档</p>
+<p><img src="%E6%95%B0%E6%8D%AE%E9%9A%90%E8%97%8F%E6%8A%80%E6%9C%AF%E6%8F%AD%E7%A7%98/6.png" alt=""></p>
+<p>使用文档检查器是检查文档中隐藏的各种元数据的好方法，可以识别作者、批注和其他个人可识别的信息。也可用来检查隐藏文字。单击“Inspect” 按钮，文档检查其开始检查元数据并生成检查结果报告。</p>
+</blockquote>
+<p>注意：文档检查器只能检查出使用字体对话框隐藏的文字，如果文字是通过在白色背景上使用的白色字体实现隐藏的，则文档检查器是检查不出来的。</p>
+<h2 id="图像元数据"><a href="#图像元数据" class="headerlink" title="图像元数据"></a>图像元数据</h2><h3 id="JPREG"><a href="#JPREG" class="headerlink" title="JPREG"></a>JPREG</h3><blockquote>
+<p>移动设备和相机中最常用的图像存储格式。  </p>
+</blockquote>
+<h3 id="EXIF"><a href="#EXIF" class="headerlink" title="EXIF"></a>EXIF</h3><blockquote>
+<p>表示可交换图像文件格式，是很多媒体格式的标准。</p>
+</blockquote>
+<h3 id="文件格式"><a href="#文件格式" class="headerlink" title="文件格式"></a>文件格式</h3><blockquote>
+<p>文件格式定义了标记、文件头格式，以便相机和扫描仪等可以在媒体文件中插入元数据。</p>
+</blockquote>
+<h2 id="移动设备数据隐藏"><a href="#移动设备数据隐藏" class="headerlink" title="移动设备数据隐藏"></a>移动设备数据隐藏</h2><h3 id="Hide-it-Pro工具"><a href="#Hide-it-Pro工具" class="headerlink" title="Hide  it  Pro工具"></a>Hide  it  Pro工具</h3><blockquote>
+<p>简介：<a href="https://baike.baidu.com/item/%E7%BB%88%E6%9E%81%E9%9A%90%E8%97%8F%20Hide%20It%20Pro/16118189?fr=aladdin" target="_blank" rel="noopener">链接</a></p>
+<p>功能：提供信息隐藏，躲过其他用户的窥探，隐藏文件或文件夹</p>
+</blockquote>
+<h2 id="文件压缩工具的数据隐藏"><a href="#文件压缩工具的数据隐藏" class="headerlink" title="文件压缩工具的数据隐藏"></a>文件压缩工具的数据隐藏</h2><h3 id="举例-过程"><a href="#举例-过程" class="headerlink" title="举例+过程"></a>举例+过程</h3><blockquote>
+<p>例：将压缩文件隐藏到JPEG图像中。</p>
+<p>过程：</p>
+<p>首先，创建一个新的包含隐藏消息的文本文件“mike.txt”，并写入要隐藏的文件；</p>
+<p>然后，新建一个压缩文件“mike.rar”包含“mike.txt”；</p>
+<p>其次，在文件页签中的“Files  to  add”对话框中选择包含隐藏消息的mike.txt文件，然后选择确定，创建“mike.rar”文件；</p>
+<p>接下来将压缩文件隐藏到一个JPEG图像中；</p>
+<p><img src="%E6%95%B0%E6%8D%AE%E9%9A%90%E8%97%8F%E6%8A%80%E6%9C%AF%E6%8F%AD%E7%A7%98/7.png" alt=""></p>
+<p>也可以使用这个方法把WinRAR的压缩文件嵌入到JPEG文件的EOF符号（文件借宿符号）后面，图像在浏览器内仍可正常显示，因为浏览器一般忽略文件结束符后面的内容。可见文件结束符后是一个不错的数据藏匿之处。</p>
+<p><img src="%E6%95%B0%E6%8D%AE%E9%9A%90%E8%97%8F%E6%8A%80%E6%9C%AF%E6%8F%AD%E7%A7%98/8.png" alt=""></p>
+<p>发现隐藏消息</p>
+<p>通过以下的命令蒋JPEG图像重命名为带“.rar”扩展文件名的文件。</p>
+<p><img src="%E6%95%B0%E6%8D%AE%E9%9A%90%E8%97%8F%E6%8A%80%E6%9C%AF%E6%8F%AD%E7%A7%98/9.png" alt=""></p>
+<p>WinRAR具有修复功能，打开后单击修复压缩文件，选择刚刚新建的.RAR文件。WinRAR会自动检测到隐藏压缩文件的JPEG文件，并认为这个压缩文件已经破坏。此时，WinRAR的修复功能会尝试修复这个受损的压缩文件，并将其从JPEG文件中解压出来。</p>
+<p><img src="%E6%95%B0%E6%8D%AE%E9%9A%90%E8%97%8F%E6%8A%80%E6%9C%AF%E6%8F%AD%E7%A7%98/10.png" alt=""></p>
+<p>接收者可以通过”Extract  To“压缩至选项，从重构的“rebuilt.newimage.rar”文件中解压出”mike.txt”得到隐藏消息。</p>
+</blockquote>
+<hr>
+<hr>
+<h1 id="第3章-隐写术"><a href="#第3章-隐写术" class="headerlink" title="第3章  隐写术"></a>第3章  隐写术</h1><h2 id="隐写术简介"><a href="#隐写术简介" class="headerlink" title="隐写术简介"></a>隐写术简介</h2><p>暗鼠行动    <a href="https://www.beichengjiu.com/mathematics/184749.html" target="_blank" rel="noopener">链接</a></p>
+<p>数字隐写术曾被用于隐蔽通信和隐藏敏感数据。</p>
+<p><img src="%E6%95%B0%E6%8D%AE%E9%9A%90%E8%97%8F%E6%8A%80%E6%9C%AF%E6%8F%AD%E7%A7%98/1-1582894418372.png" alt=""></p>
+<h2 id="隐写技术"><a href="#隐写技术" class="headerlink" title="隐写技术"></a>隐写技术</h2><h3 id="主要分类"><a href="#主要分类" class="headerlink" title="主要分类"></a>主要分类</h3><blockquote>
+<p>数字信息的隐藏方法有很多，主要分为插入（文件格式的空白部分）和替换（修改字节或调整）。</p>
+</blockquote>
+<h3 id="二者的区别"><a href="#二者的区别" class="headerlink" title="二者的区别"></a>二者的区别</h3><blockquote>
+<p>以隐写为目的的话，二者的区别很重要。在隐写术中，很重要的一点就是从原始数据或者原始承载文件的角度考虑问题。</p>
+<p>使用插入法，不改变原始数据，却增加了额外数据。  </p>
+<p>使用修改法，为增加额外数据，却改变了原始数据。</p>
+</blockquote>
+<h3 id="插入方法"><a href="#插入方法" class="headerlink" title="插入方法"></a>插入方法</h3><blockquote>
+<p>简介：通过插入方法隐藏消息会插入一些额外的内容，除了被隐藏的消息外，还有文件制作工具的标识，这个标识记录了隐写程序处理隐藏载荷的地点。这种方法通常会利用文件中的空白部分。</p>
+</blockquote>
+<h4 id="追加插入法"><a href="#追加插入法" class="headerlink" title="追加插入法"></a>追加插入法</h4><blockquote>
+<p>在文件末尾附加数据应该是数字隐写术里最常用的、最简单的方法。其可以在很多类型的文件后追加数据，却不会导致文件被破坏。</p>
+<p>如：文件末尾附加数据jpeg的结尾是0xff 0xd9</p>
+</blockquote>
+<h4 id="前置插入法"><a href="#前置插入法" class="headerlink" title="前置插入法"></a>前置插入法</h4><blockquote>
+</blockquote>
+
+            </div>
+            <hr/>
+
+            
+            <style>
+    #reward {
+        margin: 40px 0;
+        text-align: center;
+    }
+
+    #reward .reward-link {
+        font-size: 1.88rem;
+    }
+
+    #reward .btn-floating:hover {
+        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2), 0 5px 15px rgba(0, 0, 0, 0.2);
+    }
+
+    #rewardModal {
+        width: 320px;
+        height: 350px;
+    }
+
+    #rewardModal .reward-title {
+        margin: 15px auto;
+        padding-bottom: 5px;
+    }
+
+    #rewardModal .modal-content {
+        padding: 10px;
+    }
+
+    #rewardModal .close {
+        position: absolute;
+        right: 15px;
+        top: 15px;
+        color: rgba(0, 0, 0, 0.5);
+        font-size: 1.3rem;
+        line-height: 20px;
+        cursor: pointer;
+    }
+
+    #rewardModal .reward-tabs {
+        margin: 0 auto;
+        width: 210px;
+    }
+
+    .reward-tabs .tabs {
+        height: 38px;
+        margin: 10px auto;
+        padding-left: 0;
+    }
+
+    .reward-tabs .tabs .tab {
+        height: 38px;
+        line-height: 38px;
+    }
+
+    .reward-tabs .tab a {
+        color: #fff;
+        background-color: #ccc;
+    }
+
+    .reward-tabs .tab a:hover {
+        color: #fff;
+    }
+
+    .reward-tabs .wechat-tab .active {
+        color: #fff;
+        background-color: #22AB38;
+    }
+
+    .reward-tabs .alipay-tab .active {
+        color: #fff;
+        background-color: #019FE8;
+    }
+
+    .reward-tabs .reward-img {
+        width: 210px;
+        height: 210px;
+    }
+</style>
+
+<div id="reward">
+    <a class="reward-link btn-floating btn-large waves-effect waves-light red">赏</a>
+
+    <!-- Modal Structure -->
+    <div id="rewardModal" class="modal">
+        <div class="modal-content">
+            <a class="close"><i class="fa fa-close"></i></a>
+            <h4 class="reward-title">来点彩头</h4>
+            <div class="reward-content">
+                <div class="reward-tabs">
+                    <ul class="tabs">
+                        <li class="tab wechat-tab waves-effect waves-light"><a class="active" href="#wechat">微信</a></li>
+                        <li class="tab alipay-tab waves-effect waves-light"><a href="#alipay">支付宝</a></li>
+                    </ul>
+                    <div id="wechat">
+                        <img src="/medias/reward/wechat.png" class="reward-img" alt="微信打赏二维码">
+                    </div>
+                    <div id="alipay">
+                        <img src="/medias/reward/alipay.jpg" class="reward-img" alt="支付宝打赏二维码">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    $(function () {
+        $('#reward .reward-link').on('click', function () {
+            $('#rewardModal').openModal();
+        });
+
+        $('#rewardModal .close').on('click', function () {
+            $('#rewardModal').closeModal();
+        });
+    });
+</script>
+            
+
+            <link rel="stylesheet" type="text/css" href="/libs/share/css/share.min.css">
+
+<div id="article-share">
+    
+    <div class="social-share" data-disabled="qzone" data-wechat-qrcode-helper="<p>微信里点“发现”->“扫一扫”二维码便可查看分享。</p>"></div>
+    
+</div>
+
+<script src="/libs/share/js/social-share.min.js"></script>
+
+            <div class="reprint">
+                <p>
+                    <span class="reprint-tip">
+                        <i class="fa fa-exclamation-circle"></i>&nbsp;&nbsp;Reprint please specify:
+                    </span>
+                    <a href="http://yoursite.com" class="b-link-green">景礼</a>
+                    <i class="fa fa-angle-right fa-lg fa-fw text-color"></i>
+                    <a href="/2020/02/19/%E6%95%B0%E6%8D%AE%E9%9A%90%E8%97%8F%E6%8A%80%E6%9C%AF%E6%8F%AD%E7%A7%98/" class="b-link-green">数据隐藏技术揭秘</a>
+                </p>
+            </div>
+        </div>
+    </div>
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+<article id="prenext-posts" class="prev-next articles">
+    <div class="row article-row">
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge left-badge text-color">
+                <i class="fa fa-chevron-left"></i>&nbsp;Previous</div>
+            <div class="card">
+                <a href="/2020/02/19/Linux%E5%AD%A6%E4%B9%A0/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/6.jpg" class="responsive-img" alt="Linux学习">
+                        
+                        <span class="card-title">Linux学习</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary">Linux 学习基础知识文件与文件夹文件：一般是一个独立的东西，可以通过一些特定工具及进行打开，并且其中不能包含除了文字以外的东西。
+文件夹：可以包含其他东西的东西
+目录结构
+bin:全称binary,含义是二进制，该目录中存储的都是一些二</div>
+                    <div class="publish-info">
+                        <span class="publish-date">
+                            <i class="fa fa-clock-o fa-fw icon-date"></i>2020-02-19
+                        </span>
+                        <span class="publish-author">
+                            
+                            <i class="fa fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/Linux/" class="post-category" target="_blank">
+                                    Linux
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/Linux/" target="_blank">
+                        <span class="chip bg-color">Linux</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                Next&nbsp;<i class="fa fa-chevron-right"></i>
+            </div>
+            <div class="card">
+                <a href="/2020/02/18/1111/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/21.jpg" class="responsive-img" alt="搭建博客">
+                        
+                        <span class="card-title">搭建博客</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary"></div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2020-02-18
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fa fa-user fa-fw"></i>
+                            Hugh Lee
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/github/" target="_blank">
+                        <span class="chip bg-color">github</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+    </div>
+</article>
+</div>
+
+
+<script>
+    $('#articleContent').on('copy', function (e) {
+        // IE8 or earlier browser is 'undefined'
+        if (typeof window.getSelection === 'undefined') return;
+
+        var selection = window.getSelection();
+        // if the selection is short let's not annoy our users.
+        if (('' + selection).length < Number.parseInt('120')) {
+            return;
+        }
+
+        // create a div outside of the visible area and fill it with the selected text.
+        var bodyElement = document.getElementsByTagName('body')[0];
+        var newdiv = document.createElement('div');
+        newdiv.style.position = 'absolute';
+        newdiv.style.left = '-99999px';
+        bodyElement.appendChild(newdiv);
+        newdiv.appendChild(selection.getRangeAt(0).cloneContents());
+
+        // we need a <pre> tag workaround.
+        // otherwise the text inside "pre" loses all the line breaks!
+        if (selection.getRangeAt(0).commonAncestorContainer.nodeName === 'PRE') {
+            newdiv.innerHTML = "<pre>" + newdiv.innerHTML + "</pre>";
+        }
+
+        var url = document.location.href;
+        newdiv.innerHTML += '<br />'
+            + 'From: 景礼<br />'
+            + 'Author: Hugh Lee<br />'
+            + 'Link: <a href="' + url + '">' + url + '</a><br />'
+            + '本文章著作权归作者所有，任何形式的转载都请注明出处。';
+
+        selection.selectAllChildren(newdiv);
+        window.setTimeout(function () {bodyElement.removeChild(newdiv);}, 200);
+    });
+</script>
+
+    </div>
+    <div class="col l3 hide-on-med-and-down">
+        <div class="toc-widget">
+            <div class="toc-title"><i class="fa fa-list-alt"></i>&nbsp;&nbsp;TOC</div>
+            <div id="toc-content"></div>
+        </div>
+    </div>
+</div>
+
+<script src="/libs/tocbot/tocbot.min.js"></script>
+<script>
+    $(function () {
+        tocbot.init({
+            tocSelector: '#toc-content',
+            contentSelector: '#articleContent',
+            headingsOffset: -($(window).height() * 0.4 - 45),
+            // headingsOffset: -205,
+            headingSelector: 'h2, h3, h4'
+        });
+
+        // modify the toc link href to support Chinese.
+        let i = 0;
+        let tocHeading = 'toc-heading-';
+        $('#toc-content a').each(function () {
+            $(this).attr('href', '#' + tocHeading + (++i));
+        });
+
+        // modify the heading title id to support Chinese.
+        i = 0;
+        $('#articleContent').children('h2, h3, h4').each(function () {
+            $(this).attr('id', tocHeading + (++i));
+        });
+
+        // Set scroll toc fixed.
+        let tocHeight = parseInt($(window).height() * 0.4 - 64);
+        let $tocWidget = $('.toc-widget');
+        $(window).scroll(function () {
+            let scroll = $(window).scrollTop();
+            /* add post toc fixed. */
+            if (scroll > tocHeight) {
+                $tocWidget.addClass('toc-fixed');
+            } else {
+                $tocWidget.removeClass('toc-fixed');
+            }
+        });
+    });
+</script>
+    
+
+</main>
+
+
+<footer class="page-footer bg-color">
+    <div class="container row center-align">
+        <div class="col s12 m8 l8 copy-right">
+            本站由&copy;<a href="https://blinkfox.github.io/" target="_blank">Blinkfox</a>基于
+            <a href="https://hexo.io/" target="_blank">Hexo</a> 的
+            <a href="https://github.com/blinkfox/hexo-theme-matery" target="_blank">hexo-theme-matery</a>主题搭建.
+
+            
+                &nbsp;<i class="fa fa-area-chart"></i>&nbsp;站点总字数:&nbsp;
+                <span class="white-color">18.2k</span>
+            
+
+            
+			
+                <br>
+                
+                <span id="busuanzi_container_site_pv">
+                    <i class="fa fa-heart-o"></i>
+                    本站总访问量 <span id="busuanzi_value_site_pv" class="white-color"></span>
+                </span>
+                
+                
+                <span id="busuanzi_container_site_uv">
+                    <i class="fa fa-users"></i>
+                    次,&nbsp;访客数 <span id="busuanzi_value_site_uv" class="white-color"></span> 人.
+                </span>
+                
+            
+        </div>
+        <div class="col s12 m4 l4 social-link social-statis">
+
+
+    <a href="mailto:xxx@xx.xx" class="tooltipped" target="_blank" data-tooltip="邮件联系我" data-position="top" data-delay="50">
+        <i class="fa fa-envelope-open"></i>
+    </a>
+
+
+
+    <a href="tencent://AddContact/?fromId=50&fromSubId=1&subcmd=all&uin=123123123" class="tooltipped" data-tooltip="QQ联系我: 123123123" data-position="top" data-delay="50">
+        <i class="fa fa-qq"></i>
+    </a>
+
+
+</div>
+    </div>
+</footer>
+
+<div class="progress-bar"></div>
+
+
+<!-- 搜索遮罩框 -->
+<div id="searchModal" class="modal">
+    <div class="modal-content">
+        <div class="search-header">
+            <span class="title"><i class="fa fa-search"></i>&nbsp;&nbsp;Search</span>
+            <input type="search" id="searchInput" name="s" placeholder="Please enter a search keyword"
+                   class="search-input" autofocus="">
+        </div>
+        <div id="searchResult"></div>
+    </div>
+</div>
+
+<script src="/js/search.js"></script>
+<script type="text/javascript">
+    searchFunc("/" + "search.xml", 'searchInput', 'searchResult');
+</script>
+<!-- 回到顶部按钮 -->
+<div id="backTop" class="top-scroll">
+    <a class="btn-floating btn-large waves-effect waves-light" href="#!">
+        <i class="fa fa-angle-up"></i>
+    </a>
+</div>
+
+
+<script src="/libs/materialize/js/materialize.min.js"></script>
+<script src="/libs/masonry/masonry.pkgd.min.js"></script>
+<script src="/libs/aos/aos.js"></script>
+<script src="/libs/scrollprogress/scrollProgress.min.js"></script>
+<script src="/libs/lightGallery/js/lightgallery-all.min.js"></script>
+<script src="/js/matery.js"></script>
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+
+
+
+    <script src="/libs/others/clicklove.js"></script>
+
+
+    <script async src="/libs/others/busuanzi.pure.mini.js"></script>
+
+
+</body>
+</html>
